@@ -1,0 +1,12 @@
+{
+  "name": "strapi-plugin-i18n",
+  "version": "3.4.1",
+  "description": "Strapi content internationalization plugin",
+  "strapi": {
+    "name": "I18N",
+    "icon": "globe",
+    "description": "i18n.plugin.description",
+    "required": false
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
