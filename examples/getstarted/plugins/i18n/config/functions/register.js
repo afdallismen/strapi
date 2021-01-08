@@ -8,6 +8,14 @@ module.exports = () => {
 
   Object.values(strapi.models).forEach(model => {
     if (_.get(model, 'pluginOptions.i18n.enabled', false) === true) {
+      _.set(model.attributes, '_root', {
+        writable: true,
+        private: false,
+        configurable: false,
+        collection: 'root',
+        plugin: 'i18n',
+      });
+
       _.set(model.attributes, '_localizations', {
         writable: true,
         private: false,
