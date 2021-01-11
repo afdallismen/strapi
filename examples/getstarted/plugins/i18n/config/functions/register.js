@@ -24,11 +24,20 @@ module.exports = () => {
         plugin: 'i18n',
       });
 
-      _.set(model.attributes, 'locale', {
+      _.set(model.attributes, '_locale', {
         writable: true,
         private: false,
         configurable: false,
         type: 'string',
+        default: 'en-US',
+      });
+
+      _.set(model.attributes, 'self', {
+        writable: true,
+        private: false,
+        configurable: false,
+        collection: model.modelName,
+        plugin: model.plugin,
       });
 
       // _.set(model.attributes, '_localizations', {
