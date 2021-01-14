@@ -43,8 +43,9 @@ function Inputs({
   const { formatMessage } = useIntl();
 
   const disabled = useMemo(() => !get(metadatas, 'editable', true), [metadatas]);
-  const type = fieldSchema.type;
-
+  const type = useMemo(() => get(attribute, 'inputType', get(attribute, 'type', null)), [
+    attribute,
+  ]);
   const errorId = useMemo(() => {
     return get(formErrors, [keys, 'id'], null);
   }, [formErrors, keys]);
